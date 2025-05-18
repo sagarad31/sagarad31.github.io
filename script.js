@@ -1,8 +1,5 @@
 const navLinks = document.querySelectorAll(".nav-link");
 const sections = document.querySelectorAll("section");
-const text =
-  "An aspiring computer engineer and passionate web developer based in Nepal.";
-const introEl = document.getElementById("intro");
 
 window.addEventListener("scroll", () => {
   let current = "";

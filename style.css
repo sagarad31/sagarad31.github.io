@@ -72,11 +72,33 @@ section {
 }
 
 .typing {
-  font-size: 1.1rem;
-  color: var(--text-muted);
-  border-right: 2px solid var(--accent);
+  font-family: monospace, monospace;
+  font-size: 1.1rem; /* adjust size to fit your design */
   white-space: nowrap;
   overflow: hidden;
+  border-right: 2px solid var(--accent); /* cursor */
+
+  width: 0ch; /* start hidden */
+  animation: typing 4s steps(58, end) forwards, blink 0.75s step-end infinite;
+
+  background: linear-gradient(
+    to right,
+    #8a2be2 0%,
+    /* purple */ #8a2be2 50%,
+    /* half purple */ #ffffff 75%,
+    /* white starts */ #ffffff 100% /* full white */
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes typing {
+  from {
+    width: 0ch;
+  }
+  to {
+    width: 58ch; /* length of the text */
+  }
 }
 
 @keyframes blink {
@@ -88,9 +110,6 @@ section {
   100% {
     border-color: transparent;
   }
-}
-.typing {
-  animation: blink 1s step-end infinite;
 }
 
 .content {
